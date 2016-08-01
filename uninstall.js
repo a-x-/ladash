@@ -15,4 +15,4 @@ setTimeout(function() {
         fs.writeFileSync('log', ['isexist', '2' + 'node_modules/'+name, isexist('node_modules/'+name)].join(' ') + '\n');
         child.spawn('rm', [ '-rf', 'node_modules/' + name ], { charset: 'utf8', detached: true, stdio: 'ignore' }).unref()
     }, 500)
-}, 500);
+}, 1000);
