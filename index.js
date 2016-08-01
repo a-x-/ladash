@@ -10,9 +10,9 @@ var stream = child.exec('npm i -S lodash', 'utf8').stdout
 
 stream.pipe(process.stdout)
 
-stream.on('end', function() {
-    console.log('Self uninstalling ...\n')
+stream.on('exit', function() {
     setTimeout(function() {
+        console.log('Self uninstalling ...\n')
         child.spawn('npm', [ 'un', '-S', name ], { charset: 'utf8', detached: true, stdio: 'ignore' }).unref()
     }, 100);
 })
