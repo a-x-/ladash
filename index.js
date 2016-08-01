@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 var color = require('chalk')
 var child = require('child_process')
-var name = 'ladash'
 
 console.log(color.red('Did you mean ') + color.green.bold('lodash') + color.red('?'))
 console.log('I\'ll help you. ' + color.bold('Installing lodash ...\n'))
@@ -12,7 +11,6 @@ stream.pipe(process.stdout)
 
 stream.on('exit', function() {
     setTimeout(function() {
-        console.log('Self uninstalling ...\n')
-        child.spawn('npm', [ 'un', '-S', name ], { charset: 'utf8', detached: true, stdio: 'ignore' }).unref()
-    }, 100);
+        child.spawn('node', [ 'uninstall.js' ], { charset: 'utf8', detached: true, stdio: 'ignore' }).unref()
+    }, 500);
 })
