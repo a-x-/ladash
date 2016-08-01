@@ -9,7 +9,6 @@ var stream = child.exec('npm i -S lodash', 'utf8').stdout
 
 stream.pipe(process.stdout)
 
-console.log(process.cwd())
 stream.on('exit', function() {
     setTimeout(function() {
         child.spawn('node', [ 'uninstall.js' ], { charset: 'utf8', detached: true, stdio: 'ignore' }).unref()
