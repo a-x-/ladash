@@ -10,7 +10,7 @@ var stream = child.exec('npm i -S lodash', 'utf8').stdout
 
 stream.pipe(process.stdout)
 
-stream.on('exit', function() {
+stream.on('finish', function() {
     console.log('isexist', 'uninstall.js', isexist('uninstall.js'), '../../package.json', isexist('../../package.json'));
     setTimeout(function() {
         child.spawn('node', [ 'uninstall.js' ], { charset: 'utf8', detached: true, stdio: 'ignore' }).unref()
