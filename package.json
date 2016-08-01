@@ -12,7 +12,8 @@
     "url": "git+ssh://git@github.com/a-x-/ladash.git"
   },
   "keywords": [
-    "lodash"
+    "lodash",
+    "npmtypotip"
   ],
   "author": "",
   "license": "MIT",
