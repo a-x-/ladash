@@ -1,6 +1,6 @@
 {
   "name": "ladash",
-  "version": "1.1.11",
+  "version": "1.2.0",
   "description": "lodash typo helper",
   "main": "index.js",
   "scripts": {
